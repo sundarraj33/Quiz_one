@@ -1,0 +1,320 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+        <!--<link rel='stylesheet' href='index.css'>-->
+        
+        <style>
+            body{
+                /*font-family: "Poppins", serif;*/
+                    font-family: Arial, sans-serif;
+                /*font-weight: 200;*/
+            }
+            .container{
+                width : 70%;
+                margin : 0 auto;
+                display :flex;
+                justify-content:center;            
+            }
+            .wrapper{
+                width : 70%;
+                height : 100vh;
+                margin : 0;
+                display : flex;
+                align-items : center;
+                justify-content : center;
+               
+            }
+            .quiz_box{
+                width : 60%;
+                border : 1px solid red;
+                border-radius : 10px;
+                padding : 10px;
+                box-shadow : 1px 1px 1px 1px gray;
+                 /*display : none;*/
+            }
+            .title{
+                font-size : 18px;
+                font-weight : bold;
+                margin : 5px;
+                padding : 5px;
+                border-bottom : 1px solid gray;
+            }
+            .buttons{
+                width : 100%;
+                display : flex;
+                background : gray;
+                justify-content : flex-end;
+                /*align-items : center;*/
+                
+            }
+            .next_btn{
+                width : 25%;
+                padding : 10px;
+                border : 1px solid #00FFFF;
+                background:#00FFFF;
+                cursor : pointer;
+                display : flex;
+                justify-content : center;
+                align-items : center;
+                margin : 10px;
+                border-radius : 3px;
+            }
+            .options{
+                margin : 5px;
+                padding : 5px;
+                width : 100%;
+                
+            }
+            .option_title{
+                font-size : 16px; 
+                padding : 5px;
+                color : red;
+            }
+            .options_field{
+                position:relative;
+                margin-bottom :10px;
+                width : 100%;
+                padding:5px;
+                /*border : 1px solid black;*/
+            }
+            .options_field input{
+                opacity : 0;
+                position : absolute;
+                left :0;
+                top : 0;
+                width :100%;
+                height:100%;
+                z-index:1;
+                cursor : pointer;
+            }
+            .options_field label{
+                color :black;
+            }
+            .options_field:hover{
+                background : #bddffd;
+                width : 90%;
+            }
+            input[type="radio"]:checked + .option_title{
+                color : blue;
+            }
+            .box1{
+                /*display : none;*/
+            }
+            .results{
+                display :none;
+            }
+            .statement{
+                width : 95%;
+                display : flex;
+                background : #bddffd;
+                padding: 2%;
+                justify-content : space-between;
+            }
+            .success{
+                color : 'green';
+                
+            }
+        </style>
+    </head>
+    <body>
+        
+        
+        <div class='container'>
+            <div class='wrapper'>
+                
+                <div class='quiz_box'>
+                    <div class='box1'>
+                    <div class='statement'>
+                        <!--<div class='scoredetails'>-->
+                            <p>Questions <span id='qtn_count'></span></p>
+                            <p>Score: <span class='score'>0</span></p>
+                        <!--</div>-->
+                    </div>
+                    <div class='title'></div>
+                    
+                    <div class='options'>
+                        
+                        <div class='options_field'>
+                            <input type="radio" name="options" class='option option1val'  value="">
+                            <label class='option1 option_title'></label><br>
+                        </div>
+                        
+                        <div class='options_field'>
+                            <input type='radio' name="options" class='option option2val' value=''>
+                            <label class='option2 option_title'></label>
+                        </div>
+                        
+                        <div class='options_field'>
+                            <input type='radio' name='options' class='option option3val' value=''>
+                            <label class='option3 option_title'></label>
+                        </div>
+                        
+                        <div class='options_field'>
+                            <input type='radio' name='options' class='option option4val' value=''>
+                            <label class='option4 option_title'></label>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class='buttons'>
+                        <button onClick='sub()' class='next_btn' id='submit'>Submit</button>
+                        <button onClick='next()' class='next_btn' id='next'>Next</button>            
+                    </div>
+                    <div class=''>
+                        <p class='notification'></p>
+                    </div>
+                    </div>
+                    
+                    <div class='results'>
+                        <p>Completed</p>
+                        <p> Your Score is <span class='scores'></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        
+        <h2 id='mark'></h2>
+        
+        
+       <script>
+           var quetions = [{
+               'question' : "What country Find Zero?",
+               'option1' : "America",
+               'option2' : "India",
+               'option3' : "Austrlia",
+               'option4' : "China",
+               'answers' : "China",
+           },{
+               'question' : "How many Wonder available in world?",
+               'option1' : "16",
+               'option2' : "7",
+               'option3' : "9",
+               'option4' : "11",
+               'answers' : "7",
+           },{
+               'question' : "What is the biggest river in india",
+               'option1' : "Kaveri",
+               'option2' : "Bhrama putra",
+               'option3' : "Kanga",
+               'option4' : "Sindu",
+               'answers' : "Kanga",
+           },{
+               'question' : "How many rounds are there in Olymbic?",
+               'option1' : "3",
+               'option2' : "5",
+               'option3' : "7",
+               'option4' : "9",
+               'answers' : "5",
+           },{
+               'question' : "What is the Capital of India?",
+               'option1' : "Chennai",
+               'option2' : "Bengaluru",
+               'option3' : "Mumbai",
+               'option4' : "Delhi",
+               'answers' : "Delhi",
+           }];
+           
+           
+           var title = document.querySelector('.title');
+           var notification = document.querySelector(".notification");
+            
+           var counts = 0;
+           var marks = 0;
+           
+           document.querySelector("#qtn_count").innerText = counts+1  +"/"+ quetions.length;
+           
+           document.querySelector("#next").disabled = true;
+           document.querySelector("#next").style.cursor = 'no-drop';
+           
+           function start(counts){
+                
+                title.innerText = quetions[counts].question;
+            
+                document.querySelector('.option1').innerText = quetions[counts].option1;
+                document.querySelector('.option2').innerText = quetions[counts].option2;
+                document.querySelector('.option3').innerText = quetions[counts].option3;
+                document.querySelector('.option4').innerText = quetions[counts].option4;
+               
+                document.querySelector('.option1val').value = quetions[counts].option1;
+                document.querySelector('.option2val').value = quetions[counts].option2;
+                document.querySelector('.option3val').value = quetions[counts].option3;
+                document.querySelector('.option4val').value = quetions[counts].option4;
+           }
+           
+           
+           
+           function sub(){
+                var option1valchecked = document.querySelectorAll(".option:checked");
+                var getans = option1valchecked[0];
+                
+                if(getans == undefined){
+                    notification.innerText = "Please Select value";
+                    notification.style.color = "red";
+                }
+                
+                
+                markresult(getans);
+                
+                document.querySelector("#next").disabled = false;
+                document.querySelector("#next").style.cursor = 'pointer';
+                document.querySelector("#submit").disabled = true;
+                document.querySelector("#submit").style.cursor = 'no-drop';
+                document.querySelector(".options_field").style.cursor = 'no-drop';
+                
+           }
+           
+           
+            function next(){
+                var options_field = document.querySelectorAll(".options_field");
+                counts++;
+                document.querySelector("#qtn_count").innerText =counts+1 +"/"+ quetions.length; 
+                
+                
+                
+                
+                
+                if(quetions.length-1 < counts){
+                    // break;
+                    document.querySelector(".box1").style.display = 'none';
+                    document.querySelector(".results").style.display = 'block';
+                    document.querySelector(".scores").innerText = marks;
+                    // document.querySelector(".results").style.display = 'block';
+                    
+                }else{
+                    
+                
+                
+                
+                start(counts);
+                }
+                document.querySelector("#next").disabled = true;
+                document.querySelector("#next").style.cursor = 'no-drop';
+                document.querySelector("#submit").disabled = false;
+                document.querySelector("#submit").style.cursor = 'pointer';
+                document.querySelector(".options_field").style.cursor = 'pointer';
+                 document.querySelector(".notification").innerText = '';
+            }
+           
+           
+            function markresult(getans){
+                var score = document.querySelector(".score");
+                var answer = quetions[counts].answers;
+                var notification = document.querySelector(".notification");
+                if(getans.value == answer){
+                    notification.innerHTML = `<p class='success' style='color:green'>Correct</p>`;
+                  marks = marks+10; 
+                }else{
+                    notification.innerHTML = `<p class='faill' style='color:red'>Wrong.. Correct Answer is <span style='color:black'>${answer}</span></p>`;
+                }
+                score.innerText = marks;
+            }
+           
+          start(counts);
+           
+           
+       </script>
+    </body>
+</html>
