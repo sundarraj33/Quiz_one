@@ -1,0 +1,41 @@
+var quetions = [
+        {
+           'question' : "What country Find Zero?",
+           'option1' : "America",
+           'option2' : "India",
+           'option3' : "Austrlia",
+           'option4' : "China",
+           'answers' : "China",
+        },
+        {
+           'question' : "How many Wonder available in world?",
+           'option1' : "16",
+           'option2' : "7",
+           'option3' : "9",
+           'option4' : "11",
+           'answers' : "7",
+        },
+        {
+           'question' : "What is the biggest river in india",
+           'option1' : "Kaveri",
+           'option2' : "Bhrama putra",
+           'option3' : "Kanga",
+           'option4' : "Sindu",
+           'answers' : "Kanga",
+        },
+        {
+           'question' : "How many rounds are there in Olymbic?",
+           'option1' : "3",
+           'option2' : "5",
+           'option3' : "7",
+           'option4' : "9",
+           'answers' : "5",
+        },
+        {
+           'question' : "What is the Capital of India?",
+           'option1' : "Chennai",
+           'option2' : "Bengaluru",
+           'option3' : "Mumbai",
+           'option4' : "Delhi",
+           'answers' : "Delhi",
+        }];

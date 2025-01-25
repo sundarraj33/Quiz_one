@@ -1,0 +1,227 @@
+
+    body{
+        font-family: Arial, sans-serif;
+        /*background:gray;*/
+    }
+    
+    
+    @media (max-width: 768px) 
+    {
+        
+        .container{
+            width : 100%;
+            margin : 0 auto;
+            display :flex;
+            justify-content:center;            
+        }
+        .wrapper{
+            width : 100%;
+            height : 100vh;
+            margin : 0;
+            display : flex;
+            align-items : center;
+            justify-content : center;
+           
+        }
+        .quiz_box{
+            width : 80%;
+            border : 1px solid red;
+            border-radius : 10px;
+            padding : 10px;
+            box-shadow : 1px 1px 1px 1px gray;
+             /*display : none;*/
+        }
+        .title{
+            font-size : 18px;
+            font-weight : bold;
+            margin : 5px;
+            padding : 5px;
+            border-bottom : 1px solid gray;
+        }
+        .buttons{
+            width : 100%;
+            display : flex;
+            background : gray;
+            justify-content : flex-end;
+            /*align-items : center;*/
+            
+        }
+        .next_btn{
+            width : 25%;
+            padding : 10px;
+            border : 1px solid #00FFFF;
+            background:#00FFFF;
+            cursor : pointer;
+            display : flex;
+            justify-content : center;
+            align-items : center;
+            margin : 10px;
+            border-radius : 3px;
+        }
+        .options{
+            margin : 5px;
+            padding : 5px;
+            width : 100%;
+            
+        }
+        .option_title{
+            font-size : 16px; 
+            padding : 5px;
+            color : red;
+        }
+        .options_field{
+            position:relative;
+            margin-bottom :10px;
+            width : 100%;
+            padding:5px;
+            /*border : 1px solid black;*/
+        }
+        .options_field input{
+            opacity : 0;
+            position : absolute;
+            left :0;
+            top : 0;
+            width :100%;
+            height:100%;
+            z-index:1;
+            /*cursor : pointer;*/
+        }
+        .options_field label{
+            color :black;
+        }
+        .options_field:hover{
+            background : #bddffd;
+            width : 90%;
+        }
+        input[type="radio"]:checked + .option_title{
+            color : blue;
+        }
+        .box1{
+            /*display : none;*/
+        }
+        .results{
+            display :none;
+        }
+        .statement{
+            width : 95%;
+            display : flex;
+            background : #bddffd;
+            padding: 2%;
+            justify-content : space-between;
+        }
+        .success{
+            color : 'green';
+            
+        }
+    }
+
+
+
+    @media (min-width: 768px) 
+    {
+        .container{
+            width : 70%;
+            margin : 0 auto;
+            display :flex;
+            justify-content:center;            
+        }
+        .wrapper{
+            width : 70%;
+            height : 100vh;
+            margin : 0;
+            display : flex;
+            align-items : center;
+            justify-content : center;
+           
+        }
+        .quiz_box{
+            width : 60%;
+            border : 1px solid red;
+            border-radius : 10px;
+            padding : 10px;
+            box-shadow : 1px 1px 1px 1px gray;
+             /*display : none;*/
+        }
+        .title{
+            font-size : 18px;
+            font-weight : bold;
+            margin : 5px;
+            padding : 5px;
+            border-bottom : 1px solid gray;
+        }
+        .buttons{
+            width : 100%;
+            display : flex;
+            background : gray;
+            justify-content : flex-end;
+            /*align-items : center;*/
+            
+        }
+        .next_btn{
+            width : 25%;
+            padding : 10px;
+            border : 1px solid #00FFFF;
+            background:#00FFFF;
+            cursor : pointer;
+            display : flex;
+            justify-content : center;
+            align-items : center;
+            margin : 10px;
+            border-radius : 3px;
+        }
+        .options{
+            margin : 5px;
+            padding : 5px;
+            width : 100%;
+            
+        }
+        .option_title{
+            font-size : 16px; 
+            padding : 5px;
+            color : red;
+        }
+        .options_field{
+            position:relative;
+            margin-bottom :10px;
+            width : 100%;
+            padding:5px;
+            /*border : 1px solid black;*/
+        }
+        .options_field input{
+            opacity : 0;
+            position : absolute;
+            left :0;
+            top : 0;
+            width :100%;
+            height:100%;
+            z-index:1;
+            /*cursor : pointer;*/
+        }
+        .options_field label{
+            color :black;
+        }
+        .options_field:hover{
+            background : #bddffd;
+            width : 90%;
+        }
+        input[type="radio"]:checked + .option_title{
+            color : blue;
+        }
+        .box1{
+            /*display : none;*/
+        }
+        .results{
+            display :none;
+        }
+        .statement{
+            width : 95%;
+            display : flex;
+            background : #bddffd;
+            padding: 2%;
+            justify-content : space-between;
+        }
+        .success{
+            color : 'green';
+            
+        }
+    }

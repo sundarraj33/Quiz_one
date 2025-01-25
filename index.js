@@ -1,73 +1,4 @@
-<html>
-    <head>
-        <meta name='viewport' content='width=device-width,initial-scale=1.0'>
-        <meta name='Author' content='Sundar raj'>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-        <link rel='stylesheet' href='index.css'>
-        <script src='question.js'></script>
-    </head>
-    <body>
-        
-        
-        <div class='container'>
-            <div class='wrapper'>
-                <div class='quiz_box'>
-                    
-                    <div class='box1'>
-                        <div class='statement'>
-                            <p>Questions <span id='qtn_count'></span></p>
-                            <p>Score: <span class='score'>0</span></p>
-                        </div>                        
-                        <div class='title'></div>
-                        
-                        <div class='options'>
-                            
-                            <div class='options_field'>
-                                <input type="radio" name="options" class='option option1val'  value="">
-                                <label class='option1 option_title'></label><br>
-                            </div>
-                            
-                            <div class='options_field'>
-                                <input type='radio' name="options" class='option option2val' value=''>
-                                <label class='option2 option_title'></label>
-                            </div>
-                            
-                            <div class='options_field'>
-                                <input type='radio' name='options' class='option option3val' value=''>
-                                <label class='option3 option_title'></label>
-                            </div>
-                            
-                            <div class='options_field'>
-                                <input type='radio' name='options' class='option option4val' value=''>
-                                <label class='option4 option_title'></label>
-                            </div>
-                        </div>
-                        
-                        <div class='buttons'>
-                            <button onClick='sub()' class='next_btn' id='submit'>Submit</button>
-                            <button onClick='next()' class='next_btn' id='next'>Next</button>            
-                        </div>
-                        
-                        <div class=''>
-                            <p class='notification'></p>
-                        </div>
-                    </div>
-                    
-                    <div class='results'>
-                        <p>Completed</p>
-                        <p> Your Score is <span class='scores'></span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-
-       <script>
-           
-           
-           
             
            var counts = 0;
            var marks = 0;
@@ -161,6 +92,3 @@
           start(counts);
            
            
-       </script>
-    </body>
-</html>
